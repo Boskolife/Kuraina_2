@@ -10,7 +10,7 @@ htmlFiles.forEach((file) => {
 });
 
 export default defineConfig({
-  base: '/Kuraina_2',
+  base: '/Kuraina_2', 
   root: 'src',
   publicDir: '../public',
   plugins: [
