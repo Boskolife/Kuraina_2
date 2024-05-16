@@ -1,0 +1,76 @@
+#footer {
+    background-color: #0A0805;
+    @include adaptive-value("padding-top", 60, 35, 1);
+    @include adaptive-value("padding-bottom", 60, 25, 1);
+
+    .container {
+        max-width: 375px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .history_logo {
+        @include adaptive-value("width", 230, 165, 1);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    
+        &:hover {
+            .kurai_logo {
+                transform: rotateZ(720deg);
+                transition: transform 1s ease-in-out 0s;
+            }
+        }
+ 
+        .kurai_logo {
+            margin-bottom: 20px;
+        }
+    }
+
+    .socials {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        @include adaptive-value("gap", 40, 25, 1);
+        @include adaptive-value("margin-bottom", 75, 40, 1);
+    }
+
+    .link {
+        width: 56px;
+        height: 56px;
+
+        &:hover {
+
+            svg {
+                stroke: #FFCE00;
+                transition: all .3s ease 0s;
+            }
+        }
+
+        svg {
+            stroke: white;
+            transition: all .3s ease 0s;
+        }
+    }
+
+    .creator {
+        max-width: 200px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .copyrigth {
+        color: rgba(255, 255, 255, 0.60);
+        font-family: Gabriela;
+        font-size: 14px;
+    }
+}

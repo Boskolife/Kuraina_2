@@ -1,0 +1,40 @@
+#header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 0;
+    z-index: 1;
+
+    .container {
+        max-width: 1270px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 0 15px;
+    }
+
+    .content{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .history_logo {
+        @include adaptive-value("width", 230, 132, 1);
+        margin-bottom: 30px;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    
+        &:hover {
+            .kurai_logo {
+                transform: rotateZ(720deg);
+                transition: transform 1s ease-in-out 0s;
+            }
+        }
+
+        .kurai_logo {
+            margin-bottom: 20px;
+        }
+    }
+}
