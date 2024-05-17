@@ -17,21 +17,25 @@
     }
 
     .history_logo {
-        @include adaptive-value("width", 230, 165, 1);
         margin-bottom: 30px;
         display: flex;
         align-items: center;
-        gap: 18px;
-    
+        @include adaptive-value("gap", 18, 10, 1);
+
         &:hover {
             .kurai_logo {
                 transform: rotateZ(720deg);
                 transition: transform 1s ease-in-out 0s;
             }
         }
- 
+
         .kurai_logo {
-            margin-bottom: 20px;
+            @include adaptive-value("margin-bottom", 20, 12, 1);
+            @include adaptive-value("width", 47, 27, 1);
+        }
+
+        .kurai_name {
+            @include adaptive-value("width", 165, 95, 1);
         }
     }
 
