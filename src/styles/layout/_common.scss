@@ -38,7 +38,6 @@
         left: 0;
         width: 100%;
         height: 100%;
-        mix-blend-mode: soft-light;
 
         img {
             width: 100%;
@@ -64,7 +63,7 @@
     .main_title {
         color: #2F2619;
         font-family: "Gabriela";
-        @include adaptive-value("font-size", 102, 33, 1);
+        @include adaptive-value("font-size", 102, 36, 1);
         font-style: normal;
         font-weight: 400;
         line-height: 130%;
@@ -97,18 +96,19 @@
     .person {
         max-width: 500px;
         max-height: 900px;
+        height: 85vh;
         position: absolute;
         top: 50%;
         transform: translateY(-50%);
-        right: -10%;
+        right: 0;
         z-index: 1;
 
         @include media('<desktop') {
             position: static;
-            max-height: 550px;
+            max-height: 505px;
             transform: translateY(0);
-            @include adaptive-value("margin-top", -130, -100, 1);
-            margin-left: 90px;
+            @include adaptive-value("margin-top", -130, -60, 1);
+            margin-left: 120px;
         }
     }
 }
@@ -117,15 +117,12 @@
     margin-top: -60px;
     position: relative;
     z-index: 1;
-    height: 1515px;
-    height: 100dvh;
+    @include adaptive-value("height", 1515, 635, 1);
 
     @include media('>1530px') {
         margin-top: -100px;
-    }
-
-    @include media('<tablet') {
-        height: 650px;
+        height: 100%;
+        aspect-ratio: 4/4;
     }
 
     .main_bg {
@@ -138,7 +135,10 @@
         img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+
+            @include media('<tablet') {
+                object-fit: cover;
+            }
         }
     }
 
@@ -202,7 +202,7 @@
 
     .text_title {
         color: #2F2619;
-        text-align: center;
+        text-align: start;
         font-family: Gabriela;
         @include adaptive-value(" font-size", 52, 26, 1);
         line-height: 130%;
@@ -404,7 +404,7 @@
     }
 
     .text_content {
-        max-width: 505px;
+        max-width: 440px;
         width: 100%;
 
         @include media('<desktop') {
