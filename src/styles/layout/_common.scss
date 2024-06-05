@@ -112,11 +112,23 @@ body {
             display: inline-block;
 
             &:nth-child(1) {
-                @include adaptive-value("margin-left", 90, 30, 1);
+                @include adaptive-value("margin-left", 90, 10, 1);
+            }
+
+            &:nth-child(2) {
+                @include media('<phone') {
+                    margin-left: 100px;
+                }
             }
 
             &:nth-child(3) {
-                @include adaptive-value("margin-left", 90, 30, 1);
+                @include adaptive-value("margin-left", 90, 10, 1);
+            }
+
+            &:nth-child(4) {
+                @include media('<phone') {
+                    margin-left: 40px;
+                }
             }
         }
     }
@@ -133,9 +145,9 @@ body {
 
         @include media('<desktop') {
             position: static;
-            max-height: 590px;
+            max-height: 655px;
             transform: translateY(0);
-            @include adaptive-value("margin-top", -130, -95, 1);
+            margin-top: -110px;
             width: auto;
             max-width: 100%;
         }
@@ -569,9 +581,14 @@ body {
 
 .history_6 {
     @include adaptive-value("padding-top", 150, 60, 1);
-    padding-bottom: 180px;
+    @include adaptive-value("padding-bottom", 180, 60, 1);
     position: relative;
     z-index: 1;
+    overflow: hidden;
+
+    @include media('<phone'){
+        padding-bottom: 160px;
+    }
 
     .bg {
         position: absolute;
@@ -643,43 +660,58 @@ body {
         font-weight: 600;
     }
 
-    .img_desktop {
-        max-width: 760px;
-        width: 100%;
-
-        @include media('<phone') {
-            display: none;
-        }
+    .history_6_img {
+        position: relative;
     }
 
-    .img_phone {
-        display: none;
-
-        @include media('<phone') {
-            display: block;
-        }
+    .img_desktop {
+        max-width: 545px;
+        width: 100%;
     }
 
     .elem_1,
     .elem_2 {
+        position: absolute;
+
+        @include media('<tablet') {
+            display: none;
+        }
+    }
+
+    .elem_1{
+        max-width: 325px;
+        width: 100%;
+        left: -19%;
+        top: 18%;
+    }
+
+    .elem_2 {
+        max-width: 460px;
+        width: 100%;
+        bottom: -110px;
+        right: 0;
+    }
+
+    .elem_3,
+    .elem_4 {
         display: none;
     }
 
-    .elem_1 {
+    .elem_3 {
         position: absolute;
         right: 0;
         bottom: 100px;
         max-width: 250px;
 
-        @include media('<phone') {
+        @include media('<tablet') {
             display: block;
         }
     }
 
-    .elem_2 {
+    .elem_4 {
         position: absolute;
         left: 0;
-        bottom: 40px;
+        bottom: 25px;
         max-width: 300px;
         height: 120px;
 
@@ -693,7 +725,6 @@ body {
     background-color: #0A0805;
     @include adaptive-value("padding-top", 220, 150, 1);
     @include adaptive-value("padding-bottom", 65, 55, 1);
-    margin-top: -100px;
 
     .main_container {
         max-width: 1440px;
